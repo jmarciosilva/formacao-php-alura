@@ -38,24 +38,24 @@ class Conta
         return $this->saldo;
     }
 
-    public function recuperaNomeTitular(): float
+    public function recuperaNomeTitular(): string
     {
-        return $this->nomeTitular();
+        return $this->nomeTitular;
     }
 
-    public function recuperaCpfTitular(): float
+    public function recuperaCpfTitular(): string
     {
-        return $this->cpfTitular();
+        return $this->cpfTitular;
     }
 
-    public function defineNomeTitular(string $nomeTitular)
+    public function defineNomeTitular(string $nomeTitular):void
     {
 
         $this->nomeTitular = $nomeTitular;
 
     }
 
-    public function defineCpfTitular(string $cpfTitular)
+    public function defineCpfTitular(string $cpfTitular):void
     {
 
         $this->cpfTitular = $cpfTitular;
