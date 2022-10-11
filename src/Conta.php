@@ -1,9 +1,9 @@
 <?php
 class Conta
 {
-    public string $cpfTitular;
-    public string $nomeTitular;
-    public float $saldo = 0;
+    private string $cpfTitular;
+    private string $nomeTitular;
+    private float $saldo = 0;
 
     public function saca(float $valorASacar): void
     {
@@ -31,5 +31,34 @@ class Conta
         }
         $this->saca($valorATransferir);
         $contaDestino->deposita($valorATransferir);
+    }
+
+    public function recuperaSaldo(): float
+    {
+        return $this->saldo;
+    }
+
+    public function recuperaNomeTitular(): float
+    {
+        return $this->nomeTitular();
+    }
+
+    public function recuperaCpfTitular(): float
+    {
+        return $this->cpfTitular();
+    }
+
+    public function defineNomeTitular(string $nomeTitular)
+    {
+
+        $this->nomeTitular = $nomeTitular;
+
+    }
+
+    public function defineCpfTitular(string $cpfTitular)
+    {
+
+        $this->cpfTitular = $cpfTitular;
+
     }
 }
