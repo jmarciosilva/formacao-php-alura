@@ -3,7 +3,14 @@ class Conta
 {
     private string $cpfTitular;
     private string $nomeTitular;
-    private float $saldo = 0;
+    private float $saldo;
+
+    public function __construct(string $cpfTitular, string $nomeTitular)
+    {
+        $this->cpfTitular = $cpfTitular;
+        $this->nomeTitular = $nomeTitular;
+        $this->saldo = 0;
+    }
 
     public function saca(float $valorASacar): void
     {
@@ -48,17 +55,5 @@ class Conta
         return $this->cpfTitular;
     }
 
-    public function defineNomeTitular(string $nomeTitular):void
-    {
-
-        $this->nomeTitular = $nomeTitular;
-
-    }
-
-    public function defineCpfTitular(string $cpfTitular):void
-    {
-
-        $this->cpfTitular = $cpfTitular;
-
-    }
+   
 }
