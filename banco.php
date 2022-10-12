@@ -1,10 +1,12 @@
 <?php
 require_once 'src/Conta.php';
 require_once 'src/Titular.php';
+require_once 'src/CPF.php';
 
-$primeiraConta = new Conta(new Titular('123.456.789-10', 'José Márcio'));
+$joseMarcio = new Titular(new CPF("123.456.789-10"), "José Marcio Ferreira da Silva");
+$primeiraConta = new Conta($joseMarcio);
 //var_dump($primeiraConta);
-$segundaConta = new Conta(new Titular('987.654.321-10', 'Livia Ferreira'));
+$segundaConta = new Conta(new Titular(new CPF('987.654.321-10'), 'Livia Ferreira'));
 
 $primeiraConta->deposita(500);
 echo "Nome do Titular: ". $primeiraConta->recuperaNomeTitular() . PHP_EOL;
